@@ -68,7 +68,7 @@ functions:
     handler: handler.processLog
     events:
       - s3:
-         bucket: "processLog-dev-serverlessdeploymentbucket"
+         bucket: "processlog-dev-serverlessdeploymentbucket"
          event: s3:ObjectCreated:*
          rules:
            - prefix: logs/
@@ -77,7 +77,7 @@ functions:
   processTask:
      handler: handler.processTask
      events:
-       - schedule: ${file(myVars.yml) :schedule}  
+       - schedule: ${file(myvars.yml) :schedule}  
 
 package:
    exclude: 
